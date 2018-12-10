@@ -1,0 +1,61 @@
+body{
+background: red;
+
+}
+.ClassTittle {
+	color : red;
+	text-align: left
+}
+.ClassText {
+	color : red;
+	font-size: 100%
+}
+
+#Class1 {
+	max-width:60%;
+    max-height:60%;
+    margin-left: auto;
+    margin-right: auto;
+
+	background: #ccccff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+    transition: 0.3s;
+    padding: 2px 16px;
+    text-align: center
+}
+.ClassImg
+{
+	
+    width : 256px;
+	height: 256px;
+	display: block;
+    margin: 0 auto;
+}
+.Likes{
+	text-align: right
+}
+.ClassButt
+{
+	position: fixed; 
+    right: 5px; 
+    top: 85%; 
+  z-index: 1;
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  line-height: 1.1em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px rgba(255,255,255,0);
+  font-size: 200%;
+  font-weight: 900;
+  color: #000;
+  border-radius: 100%;
+  background: rgb(144,142,105) linear-gradient(rgb(185,181,151), rgb(144,142,105));
+  box-shadow:
+   inset 0 -2px 1px rgba(0,0,0,.5),
+   inset 0 2px 1px rgba(255,255,255,0),
+   0 4px 4px rgba(0,0,0,0);
+
+}
