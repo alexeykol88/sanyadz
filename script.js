@@ -1,11 +1,19 @@
 $('document').ready(function()
 {
-
-$('button').on('click',function(){
+var like = 1;
+var array = [];
+	document.querySelector("#Liker").addEventListener('click', function(event) {
+    Liker.innerHTML = "<input type ='button' class = 'Likes' value = '"+like +' '+"liked it' >";
+    like++;
+})
+document.querySelector("#ClassButt").addEventListener('click', function(event) {
+     
+	var title = document.getElementById('tittle');
+    var text = document.getElementById("text");
 	var newDiv = document.createElement("div");
-        newDiv.innerHTML = "<div id = 'Class1'> <p class  = 'ClassTittle'><strong>TITLE ABOUT LIFE</strong></p><p class = 'ClassText'>My sanity left me,<br>When I was 17,<br>My heart broke beyond repair, <br>When I was 17,<br>I Realized the pain is and will always be a cycle,When I was 17<br>You are not alone.<br>Rest in Power<br></p><figure class = 'ClassImg'><img src='C:\Users\alexey\Desktop\sanyaex\XXXT.jpg' width='256' height='256' alt='ERROR'></figure><p>AUTHORED BY XXXTOKYOCYON'</p><p class = 'Likes'>Likes : 10</p></div><br>";
-
-    // добавляем только что созданый элемент в дерево DOM
+    newDiv.innerHTML = "<br><div id = 'Class1'> <p class  = 'ClassTittle'><strong>"+title.value+"</strong></p><p class = 'ClassText'>"+text.value+"<br></p><figure class = 'ClassImg'><img src='https:/i.ytimg.com/vi/tUcKtqmI8E0/maxresdefault.jpg' width='256' height='256' alt='ERROR'></figure><p>AUTHORED BY XXXTOKYOCYON'</p><div id = 'Liker'><input type ='button' class = 'Likes' value = '0 liked it' ></div><br>";
     document.body.insertBefore(newDiv, null);
-});
+    array.push(newDiv);
+})
+
 });

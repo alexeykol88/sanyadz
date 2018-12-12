@@ -32,9 +32,9 @@ background: red;
     margin: 0 auto;
 }
 .Likes{
-	text-align: right
+	align-self: right;
 }
-.ClassButt
+#ClassButt
 {
 	position: fixed; 
     right: 5px; 
@@ -58,4 +58,27 @@ background: red;
    inset 0 2px 1px rgba(255,255,255,0),
    0 4px 4px rgba(0,0,0,0);
 
+}
+.inputClass
+{
+    
+	position: fixed; 
+    left: 3%; 
+    top: 90%; 
+    background-color: yellow;
+}
+.inputClass2
+{
+
+	position: fixed; 
+    left: 3%; 
+    top: 95%; 
+    background-color: yellow;
+}
+#Liker
+{
+	display: flex;
+flex-direction: row; 
+justify-content: flex-end; 
+width: 100%;
 }
