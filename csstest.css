@@ -34,62 +34,80 @@ background: #2EC4B6;
 .Likes{
 	align-self: right;
 }
-#ClassButt
-{
+#ClassButt {
 	position: fixed; 
     right: 5px; 
     top: 85%; 
-  z-index: 1;
   display: inline-block;
-  width: 1.1em;
-  height: 1.1em;
-  line-height: 1.1em;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: 1px 1px rgba(255,255,255,0);
-  font-size: 200%;
-  font-weight: 900;
-  color: #000;
-  border-radius: 100%;
-  background: rgb(144,142,105) linear-gradient(rgb(185,181,151), rgb(144,142,105));
-  box-shadow:
-   inset 0 -2px 1px rgba(0,0,0,.5),
-   inset 0 2px 1px rgba(255,255,255,0),
-   0 4px 4px rgba(0,0,0,0);
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#ClassButt:hover {background-color: #3e8e41}
 
+#ClassButt:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .inputClass
 {
     
-	position: fixed; 
-    left: 3%; 
-    top: 90%; 
-    background-color: #248232;
-     color: white;
+  position: fixed; 
+  left: 3%; 
+  top: 90%; 
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
 }
+.inputClass:hover {background-color: #3e8e41}
+
 .inputClass2
 {
 
-	position: fixed; 
-    left: 3%; 
-    top: 95%; 
-    background-color: #248232;
-     color: white;
+  position: fixed; 
+  left: 3%; 
+  top: 95%; 
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
 }
+.inputClass2:hover {background-color: #3e8e41}
+
 .inputClass3
 {
-
-	position: fixed; 
-    left: 3%; 
-    top: 85%; 
-     background-color: #248232;
-     color: white;
+  position: fixed; 
+  left: 3%; 
+  top: 85%; 
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
 }
+.inputClass3:hover {background-color: #3e8e41}
+
 #Liker
 {
 	display: flex;
-flex-direction: row; 
-justify-content: flex-end; 
-width: 100%;
+    flex-direction: row; 
+    justify-content: flex-end; 
+    width: 8%;
 }
+#Liker:hover {background-color : #6BA292}
