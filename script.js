@@ -17,6 +17,7 @@ document.querySelector("#ClassButt").addEventListener('click', function(event)
 {
 	var title = document.getElementById('tittle');
     var text = document.getElementById("text");
+    var author = document.getElementById("author");
 	var newDiv = document.createElement("div");
     newDiv.innerHTML = `
     <br>
@@ -30,7 +31,7 @@ document.querySelector("#ClassButt").addEventListener('click', function(event)
            class = "ClassImg"><img src="https:/i.ytimg.com/vi/tUcKtqmI8E0/maxresdefault.jpg" width="256" height="256" alt="ERROR">
        </figure>
         <p>
-           AUTHORED BY "XXXTOKYOCYON"
+           Authored by "${author.value}"
        </p>
         <div id = "Liker">
           <input type ="button" class = "Likes" value = "0 liked it" >

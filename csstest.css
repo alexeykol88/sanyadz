@@ -1,13 +1,13 @@
 body{
-background: red;
+background: #2EC4B6;
 
 }
 .ClassTittle {
-	color : red;
+	color : #2D3A3A;
 	text-align: left
 }
 .ClassText {
-	color : red;
+	color : #2D3A3A;
 	font-size: 100%
 }
 
@@ -17,7 +17,7 @@ background: red;
     margin-left: auto;
     margin-right: auto;
 
-	background: #ccccff;
+	background: #B98389;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
     transition: 0.3s;
     padding: 2px 16px;
@@ -65,7 +65,8 @@ background: red;
 	position: fixed; 
     left: 3%; 
     top: 90%; 
-    background-color: yellow;
+    background-color: #248232;
+     color: white;
 }
 .inputClass2
 {
@@ -73,7 +74,17 @@ background: red;
 	position: fixed; 
     left: 3%; 
     top: 95%; 
-    background-color: yellow;
+    background-color: #248232;
+     color: white;
+}
+.inputClass3
+{
+
+	position: fixed; 
+    left: 3%; 
+    top: 85%; 
+     background-color: #248232;
+     color: white;
 }
 #Liker
 {
