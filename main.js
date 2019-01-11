@@ -1,132 +1,94 @@
-const template = data => `<h1>${data}</h1>`;
-const postTitle = document.getElementById('tittle');
+// ХТМЛ шаблон для поста
+const postTempate = (title, text, author, likes) => `
+<br>
+  <div id="Class1">
+      <p class="ClassTittle">
+        <strong class="title">${title}</strong>
+     </p>
+      <p class="ClassText">${text}<br>
+     </p>
+      <figure
+         class="ClassImg"><img src="https://2sticker.ru/wa-data/public/shop/products/00/10/1000/images/3460/3460.750.png" width="256" height="256" alt="ERROR">
+     </figure>
+      <p>
+         Authored by "${author}"
+     </p>
+      <div id="Liker">
+        ${likes} liked it
+     </div>
+  </div>
+  <br>`;
+
+const apiURL = "https://jsonplaceholder.typicode.com/posts?userId=3";
+const postTitle = document.getElementById("title");
 const postText = document.getElementById("text");
 const postAuthor = document.getElementById("author");
 
+// Массив всех постов
+const posts = [];
 
+// Фуннкция для создания поста
+const addPost = (title, text, author, likes) => {
+  // Пушим новый пост в наш массив
+  posts.push({ title, text, author, likes });
+  console.log({ title, text, author, likes });
 
-document.querySelector("#FetchButt").addEventListener('click', function(event)
-{
-fetch("https://jsonplaceholder.typicode.com/posts?userId=3")
- .then(res => res.json())
- .then(posts => posts.forEach(post => {
-  let serDiv = document.createElement("div");
- serDiv.innerHTML +=`
-  <br>
-    <div id = "Class1">
-        <p class  = "ClassTittle">
-          <strong class = "titl">${post.title}</strong>
-       </p>
-        <p class = "ClassText">${post.body}<br>
-       </p>
-        <figure
-           class = "ClassImg"><img src="https://2sticker.ru/wa-data/public/shop/products/00/10/1000/images/3460/3460.750.png" width="256" height="256" alt="ERROR">
-       </figure>
-        <p>
-           Authored by "${post.id}"
-       </p>
-        <div id = "Liker">
-          <input type ="button" class = "Likes" value = "0 liked it" >
-       </div>
-    </div>
-    <br>`;
-    document.body.insertBefore(serDiv, null);
-    document.querySelectorAll('#Liker').forEach(function(param)
-    {
-      let likeSer =1;
-      param.addEventListener('click', function(event) 
-      {
-        param.innerHTML = "<input type ='button' class = 'Likes' value = '"+likeSer +" "+"liked it' >";
-        likeSer++;
-    })
-    })
- } ));
-});
-document.querySelectorAll('#Liker').forEach(function(Liker)
-{
-	let like = 1;
-    document.querySelector("#Liker").addEventListener('click', function(event) 
-    {
-      Liker.innerHTML = "<input type ='button' class = 'Likes' value = '"+like +' '+"liked it' >";
-      like++;
-	})
-})
-document.querySelector("#ClassButt").addEventListener('click', function(event)
-{
-	  let newDiv = document.createElement("div");
-    newDiv.innerHTML =`
-  <br>
-    <div id = "Class1">
-        <p class  = "ClassTittle">
-          <strong class = "titl">${postTitle.value}</strong>
-       </p>
-        <p class = "ClassText">${postText.value}<br>
-       </p>
-        <figure
-           class = "ClassImg"><img src="https://2sticker.ru/wa-data/public/shop/products/00/10/1000/images/3460/3460.750.png" width="256" height="256" alt="ERROR">
-       </figure>
-        <p>
-           Authored by "${postAuthor.value}"
-       </p>
-        <div id = "Liker">
-          <input type ="button" class = "Likes" value = "0 liked it" >
-       </div>
-    </div>
-    <br>`;
-    document.body.insertBefore(newDiv, null);
-    document.querySelectorAll('#Liker').forEach(function(param)
-    {
-      let likeNew =1;
-      param.addEventListener('click', function(event) 
-      {
-        param.innerHTML = "<input type ='button' class = 'Likes' value = '"+likeNew +" "+"liked it' >";
-        likeNew++;
-	  })
-    })
-});  
-document.querySelector("#ServerButt").addEventListener('click',function(event){
-     let newSerDiv =  document.createElement("div");
-     fetch('https://jsonplaceholder.typicode.com/posts',{method : 'POST',body: JSON.stringify({
-      title: postTitle,
-      text: postText,
-      author: postAuthor
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }})
-     .then(res => res.json())
-     .then(newpost => {
-      newSerDiv.innerHTML =`
-  <br>
-    <div id = "Class1">
-        <p class  = "ClassTittle">
-          <strong class = "titl">${postTitle.value}</strong>
-       </p>
-        <p class = "ClassText">${postText.value}<br>
-       </p>
-        <figure
-           class = "ClassImg"><img src="https://2sticker.ru/wa-data/public/shop/products/00/10/1000/images/3460/3460.750.png" width="256" height="256" alt="ERROR">
-       </figure>
-        <p>
-           Authored by "${postAuthor.value}"
-       </p>
-        <div id = "Liker">
-          <input type ="button" class = "Likes" value = "0 liked it" >
-       </div>
-    </div>
-    <br>`;
-    document.body.insertBefore(newSerDiv, null);
-    document.querySelectorAll('#Liker').forEach(function(param)
-    {
-      let likeNew =1;
-      param.addEventListener('click', function(event) 
-      {
-        param.innerHTML = `<input type ='button' class = 'Likes' value = '${likeNew} liked it' >`;
-        likeNew++;
-    })
-    })
-     })
+  // Создаём хтмл элемент для нашего нового поста
+  let newDiv = document.createElement("div");
+  newDiv.innerHTML = postTempate(title, text, author, likes);
+
+  // Вешаем лисенер на лайкер в нашем новом посте (вместо document.querySelector мы исспользуем newDiv.querySelector т е ищем лайкер только в этом посте)
+  const newLiker = newDiv.querySelector("#Liker");
+  newLiker.addEventListener("click", () => {
+    // Находим наш пост в массиве постов что-бы добавить ему лайк
+    const post = posts.find(p => {
+      // По идее у постов должны быть ID, но так как их нет мы будем сравнивать по тайтлу
+      return p.title === title;
+    });
+
+    // Добавляем до старых лайков ещё один
+    const newLikes = post.likes + 1;
+
+    // Изменяем старые лайки в массиве и в элементе
+    post.likes = newLikes;
+    newLiker.innerHTML = newLikes + " "+"liked it";
+  });
+
+  // Добавляем новый хтмл элемент
+  document.body.appendChild(newDiv);
+};
+
+document.querySelector("#ClassButt").addEventListener("click", function(event) {
+  addPost(postTitle.value, postText.value, postAuthor.value, 0);
 });
 
-  
+document.querySelector("#FetchButt").addEventListener("click", function(event) {
+  fetch(apiURL)
+    .then(res => res.json())
+    .then(posts =>
+      posts.forEach(post => {
+        const { title, body, id } = post;
+        addPost(title, body, id, 0);
+      })
+    );
+});
 
+document
+  .querySelector("#ServerButt")
+  .addEventListener("click", function(event) {
+    fetch(apiURL, {
+      method: "POST",
+      body: JSON.stringify({
+        title: postTitle,
+        text: postText,
+        author: postAuthor
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(res => res.json())
+      .then(newpost => {
+        addPost(postTitle.value, postText.value, postAuthor.value, 0);
+      });
+  });

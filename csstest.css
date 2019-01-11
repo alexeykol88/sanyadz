@@ -113,12 +113,14 @@ background-attachment: fixed;
     
   position: fixed; 
   left: 3%; 
-  top: 90%; 
+  top: 5%; 
   display: inline-block;
   cursor: pointer;
   outline: none;
   color: #fff;
   background-color: #c9bccc;
+  padding: 15px;
+  font-weight: bold;
   border: none;
   border-radius: 15px;
 }
@@ -131,12 +133,14 @@ background-attachment: fixed;
 
   position: fixed; 
   left: 3%; 
-  top: 95%; 
+  top: 15%; 
   display: inline-block;
   cursor: pointer;
   outline: none;
   color: #fff;
   background-color: #c9bccc;
+  padding: 15px;
+  font-weight: bold;
   border: none;
   border-radius: 15px;
 }
@@ -148,12 +152,14 @@ background-attachment: fixed;
 {
   position: fixed; 
   left: 3%; 
-  top: 85%; 
+  top: 25%; 
   display: inline-block;
   cursor: pointer;
   outline: none;
   color: #fff;
   background-color: #c9bccc;
+  padding: 15px;
+  font-weight: bold;
   border: none;
   border-radius: 15px;
 }
